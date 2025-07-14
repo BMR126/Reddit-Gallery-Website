@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(cors());
-app.use(express.static('public'));
+app.use(express.static('Public'));
 
 const reddit = new Snoowrap({
   userAgent: process.env.REDDIT_USER_AGENT,
