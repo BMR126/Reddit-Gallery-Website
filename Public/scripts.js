@@ -23,7 +23,7 @@ async function loadImages(subredditInput = null, isNew = false) {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/api/images?subreddit=${currentSubreddit}&after=${after || ''}&sort=${currentSort}&time=${currentTime}`);
+      const response = await fetch(`https://reddit-gallery-website-1.onrender.com/api/images?subreddit=${currentSubreddit}&after=${after || ''}&sort=${currentSort}&time=${currentTime}`);
       const data = await response.json();
       const images = data.images || [];
       after = data.after;
@@ -272,7 +272,7 @@ async function populateSidebar(subs) {
 
 async function loadPopularSubreddits() {
   try {
-    const res = await fetch('http://localhost:3000/api/popular-subs');
+    const res = await fetch('https://reddit-gallery-website-1.onrender.com/api/popular-subs');
     const subs = await res.json();
     populateSidebar(subs);
   } catch (error) {
