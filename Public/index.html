@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Reddit Gallery</title>
+      <link rel="stylesheet" href="styles.css">
+      <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+      <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+    </head>
+  <body>
+
+    <div style="display: flex;">
+      <!-- Sidebar -->
+       
+      <aside id="sidebar" style="width: 220px; margin-right: 20px;">
+
+        <h3 style="margin-top: 0; color: white;">Subreddits</h3>
+
+          <div class="dropdown">
+            <select id="sub-type-select">
+              <option value="recommended">Recommended</option>
+              <option value="popular">Current Most Popular</option> 
+            </select>
+          </div>
+        <ul id="popular-subs" style="list-style: none; padding: 0;"></ul>
+
+      </aside>
+
+      <!-- Main Content -->
+        <main style="flex: 1;">
+          <h1>Reddit Gallery</h1>
+
+          <div class="input-container">
+          <input type="text" id="subredditInput" placeholder="Enter subreddit (e.g. Pics, aww)">
+          </div>
+
+          <div class="sort-container">
+            <button data-sort="hot">Hot</button>
+              <!-- Top Button with Dropdown -->
+              <div class="dropdown">
+                <button class="dropbtn">Top ▾</button>
+                <div class="dropdown-content">
+                  <a href="#" data-time="day">Top Today</a>
+                  <a href="#" data-time="week" selected>Top This Week</a>
+                  <a href="#" data-time="month">Top This Month</a>
+                  <a href="#" data-time="year">Top This Year</a>
+                  <a href="#" data-time="all">Top All Time</a>
+                </div>
+              </div>
+          </div>
+
+          <div id="gallery" class="grid masonry-container"></div>
+
+        </main>
+      </div>
+
+      <div id="overlay" class="hidden">
+      <div class="arrow left" id="prevBtn">&#10094;</div>
+      <div id="overlay-content"></div>
+      <div class="arrow right" id="nextBtn">&#10095;</div>
+      <div class="close-btn" id="closeBtn">&times;</div>
+    </div>
+
+    <script src="scripts.js"></script>
+
+    <footer id="page-footer">
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Return to top</button>
+    </footer>
+
+    <script src="overlay.js"></script>
+
+  </body>
+</html>
