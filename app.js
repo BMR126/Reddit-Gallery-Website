@@ -92,5 +92,5 @@ const popularRoutes = require('./routes/popularroutes'); //2 lines for popsubsba
 app.use(popularRoutes);
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on https://reddit-gallery-website-1.onrender.com`);
 });
